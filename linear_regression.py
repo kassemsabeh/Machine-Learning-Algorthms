@@ -38,7 +38,7 @@ class GradientDescent():
         self.losses = []
         self.iterations = iterations
 
-        for iteration in range(iterations):
+        for _ in range(iterations):
             h = X_b.dot(self.theta)
             gradients = (1 / m) * X_b.T.dot(h - y_b)
             self.theta = self.theta - alpha * gradients
@@ -54,18 +54,18 @@ class GradientDescent():
         return predictions
 
 
-    def visualize_loss(self, figsize = (12, 5)):
-        """Visualize the loss in the cost function as a function of number of iterations.
+    #def visualize_loss(self, figsize = (12, 5)):
+      #  """Visualize the loss in the cost function as a function of number of iterations.
 
-        Args:
-            figsize (tuple of int): Size of figure. Example (12, 5)
-        """
-        ax, fig = plt.subplots(figsize)
-        ax.plot(range(self.iterations), self.losses)
-        ax.set_xlabel("Cost function J")
-        ax.set_ylabel("Number of iterations")
-        ax.set_title("Gradient Descent Convergence")
-        plt.show()
+      #  Args:
+       #     figsize (tuple of int): Size of figure. Example (12, 5)
+       # """
+        #ax, fig = plt.subplots(figsize)
+        #ax.plot(range(self.iterations), self.losses)
+        #ax.set_xlabel("Cost function J")
+        #ax.set_ylabel("Number of iterations")
+        #ax.set_title("Gradient Descent Convergence")
+        #plt.show()
     
     def score(self, X, y):
         """Score using mean squared error"""

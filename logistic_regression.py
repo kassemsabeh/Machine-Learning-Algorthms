@@ -23,7 +23,7 @@ class GradientDescentClassifier():
         self.losses = []
         self.iterations = iterations
 
-        for iteration in range(iterations):
+        for _ in range(iterations):
             h = self.sigmoid(X_b.dot(self.theta))
             gradients = (1 / m) * X_b.T.dot(h - y_b)
             self.theta = self.theta - alpha * gradients
@@ -56,7 +56,7 @@ class LogisticRegression():
         self.theta = np.zeros(X.shape[1])
         self.iterations = num_iterations
         self.losses_ = []
-        for i in range(num_iterations):
+        for _ in range(num_iterations):
             z = X.dot(self.theta)
             h = self.__sigmoid(z)
             gradient = np.dot(X.T, (h - y)) / y.size

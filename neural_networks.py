@@ -19,7 +19,7 @@ class NeuralNetwork():
         self.theta2 = np.random.uniform(low=-0.12, high=0.12, size=(10, 26))
         self.losses = []
         self.epochs = epochs
-        for epoch in range (epochs):
+        for _ in range (epochs):
             #print(f"Epoch {epoch}:")
             #1-forward propagation
             self.A1 = self.__add_bias(X)
